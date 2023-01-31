@@ -2,7 +2,7 @@ import { Form } from './components/Form'
 
 function App() {
   return (
-    <div className="w-screen h-screen m-4 font-display">
+    <div className="h-screen font-display">
       <Form />
     </div>
   )
