@@ -4,7 +4,7 @@ import Thanks from "./Thanks"
 
 import { useState, useEffect, useRef } from "react"
 
-export const Form = () => {
+export const CardDetails = ({ children }) => {
   const [holder, setHolder] = useState("")
   const [number, setNumber] = useState("")
   const [month, setMonth] = useState("")
@@ -59,7 +59,15 @@ export const Form = () => {
             className='w-full'
           />
         </picture>
+        <div className='cards w-full absolute p-8 pt-8'>
+          <ul>
+            {children.map((card) => (
+              <li key={card.id}>{card}</li>
+            ))}
+          </ul>
+        </div>
       </div>
+
       <form
         className='flex flex-col m-8 mt-24 gap-5'
         onSubmit={handleClick}

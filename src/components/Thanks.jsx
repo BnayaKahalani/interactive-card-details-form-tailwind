@@ -7,7 +7,7 @@ const Thanks = () => {
         src={complete}
         alt='complete'
       />
-      <h2 className='text-4xl uppercase text-dark-violet'>thank you!</h2>
+      <h2 className='uppercase text-4xl  text-dark-violet'>thank you!</h2>
       <p className='text-lg text-dark-grey'>We've added your card details</p>
     </div>
   )
