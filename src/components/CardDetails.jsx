@@ -1,6 +1,8 @@
 import bgMobile from "../assets/images/bg-main-mobile.png"
 import bgDesktop from "../assets/images/bg-main-desktop.png"
 import Thanks from "./Thanks"
+import CardBack from "../components/CardBack"
+import CardFront from "../components/CardFront"
 
 import { useState, useEffect, useRef } from "react"
 
@@ -60,11 +62,13 @@ export const CardDetails = ({ children }) => {
           />
         </picture>
         <div className='cards w-full absolute p-8 pt-8'>
-          <ul>
-            {children.map((card) => (
-              <li key={card.id}>{card}</li>
-            ))}
-          </ul>
+          <CardBack code={code} />
+          <CardFront
+            holder={holder}
+            number={number}
+            month={month}
+            year={year}
+          />
         </div>
       </div>
 
