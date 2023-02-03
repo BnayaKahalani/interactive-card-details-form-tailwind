@@ -61,7 +61,7 @@ export const CardDetails = ({ children }) => {
             className='w-full'
           />
         </picture>
-        <div className='cards w-full absolute p-8 pt-8'>
+        <div className='cards w-full absolute p-8 pt-10 right-2'>
           <CardBack code={code} />
           <CardFront
             holder={holder}
@@ -73,17 +73,17 @@ export const CardDetails = ({ children }) => {
       </div>
 
       <form
-        className='flex flex-col m-8 mt-24 gap-5'
+        className='flex flex-col m-8 mt-16 gap-5'
         onSubmit={handleClick}
       >
         {submit ? (
           <Thanks />
         ) : (
           <>
-            <label className='flex flex-col gap-2 uppercase'>
+            <label className='flex flex-col gap-2 uppercase text-sm'>
               cardholder name
               <input
-                className='p-3 border-solid border-2 border-light-grey rounded-lg'
+                className='p-3 border-solid border-2 border-light-grey rounded-lg text-base'
                 type='text'
                 placeholder='e.g. Jane Appleseed'
                 onChange={(e) => setHolder(format(e.target.value, 25, "holder"))}
@@ -93,10 +93,10 @@ export const CardDetails = ({ children }) => {
               />
             </label>
 
-            <label className='flex flex-col gap-2 uppercase'>
+            <label className='flex flex-col gap-2 uppercase text-sm'>
               card number
               <input
-                className='p-3 border-solid border-2 border-light-grey rounded-lg'
+                className='p-3 border-solid border-2 border-light-grey rounded-lg text-base'
                 type='text'
                 placeholder='e.g. 1234 5678 9123 0000'
                 onChange={(e) => setNumber(format(e.target.value, 19, "number"))}
@@ -106,11 +106,11 @@ export const CardDetails = ({ children }) => {
             </label>
 
             <div className='flex gap-4'>
-              <label className='flex flex-col gap-2 uppercase'>
+              <label className='flex flex-col gap-2 uppercase text-sm'>
                 exp.date (mm/yy)
                 <div className='flex gap-2'>
                   <input
-                    className='w-1/2 p-3 border-solid border-2 border-light-grey rounded-lg'
+                    className='w-1/2 p-3 border-solid border-2 border-light-grey rounded-lg text-base'
                     type='text'
                     placeholder='MM'
                     onChange={(e) => setMonth(format(e.target.value, 2, "month"))}
@@ -118,7 +118,7 @@ export const CardDetails = ({ children }) => {
                     name='month'
                   />
                   <input
-                    className='w-1/2 p-3 border-solid border-2 border-light-grey rounded-lg'
+                    className='w-1/2 p-3 border-solid border-2 border-light-grey rounded-lg text-base'
                     type='text'
                     placeholder='YY'
                     onChange={(e) => setYear(format(e.target.value, 2, "year"))}
@@ -128,10 +128,10 @@ export const CardDetails = ({ children }) => {
                 </div>
               </label>
 
-              <label className='flex flex-col gap-2 uppercase w-1/2'>
+              <label className='flex flex-col gap-2 uppercase text-sm w-1/2'>
                 cvc
                 <input
-                  className='p-3 border-solid border-2 border-light-grey rounded-lg'
+                  className='p-3 border-solid border-2 border-light-grey rounded-lg text-base'
                   type='number'
                   placeholder='e.g. 123'
                   onChange={(e) => setCode(format(e.target.value, 3, "code"))}
