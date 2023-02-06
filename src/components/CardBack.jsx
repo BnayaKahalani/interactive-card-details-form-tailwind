@@ -2,8 +2,8 @@ import bgCardBack from "../assets/images/bg-card-back.png"
 
 const CardBack = ({ code }) => {
   return (
-    <div className='w-72 absolute right-2.5'>
-      <p className='absolute right-8 top-16 p-1 text-white text-sm'>{code}</p>
+    <div className='w-72 lg:w-80 absolute top-10 right-6 sm:right-28 md:right-48 lg:top-80 lg:left-20 text-center'>
+      <p className='absolute p-1 right-8 top-16 text-white text-lg'>{code}</p>
       <img
         src={bgCardBack}
         alt='card back'

@@ -48,9 +48,9 @@ export const CardDetails = ({ children }) => {
   }
 
   return (
-    <>
-      <div className='flex flex-col gap-5'>
-        <picture className='sm:block'>
+    <div className='align-center lg:flex lg: h-screen'>
+      <div className='relative flex flex-col gap-5'>
+        <picture className=' lg:flex'>
           <source
             srcSet={bgDesktop}
             media='(min-width: 640px)'
@@ -58,10 +58,10 @@ export const CardDetails = ({ children }) => {
           <img
             src={bgMobile}
             alt='Background'
-            className='w-full'
+            className='w-full sm:h-80 lg:h-screen  xl:h-screen'
           />
         </picture>
-        <div className='cards w-full absolute p-8 pt-10 right-2'>
+        <div className='cards w-full absolute p-8'>
           <CardBack code={code} />
           <CardFront
             holder={holder}
@@ -73,14 +73,14 @@ export const CardDetails = ({ children }) => {
       </div>
 
       <form
-        className='flex flex-col m-8 mt-16 gap-5'
+        className='flex flex-col m-8 mt-16 gap-5 lg:justify-center lg:flex-grow lg:m-48'
         onSubmit={handleClick}
       >
         {submit ? (
           <Thanks />
         ) : (
           <>
-            <label className='flex flex-col gap-2 uppercase text-sm'>
+            <label className='flex flex-col gap-2 uppercase text-base'>
               cardholder name
               <input
                 className='p-3 border-solid border-2 border-light-grey rounded-lg text-base'
@@ -93,7 +93,7 @@ export const CardDetails = ({ children }) => {
               />
             </label>
 
-            <label className='flex flex-col gap-2 uppercase text-sm'>
+            <label className='flex flex-col gap-2 uppercase text-base'>
               card number
               <input
                 className='p-3 border-solid border-2 border-light-grey rounded-lg text-base'
@@ -106,7 +106,7 @@ export const CardDetails = ({ children }) => {
             </label>
 
             <div className='flex gap-4'>
-              <label className='flex flex-col gap-2 uppercase text-sm'>
+              <label className='flex flex-col gap-2 uppercase text-base'>
                 exp.date (mm/yy)
                 <div className='flex gap-2'>
                   <input
@@ -128,7 +128,7 @@ export const CardDetails = ({ children }) => {
                 </div>
               </label>
 
-              <label className='flex flex-col gap-2 uppercase text-sm w-1/2'>
+              <label className='flex flex-col gap-2 uppercase text-base w-1/2'>
                 cvc
                 <input
                   className='p-3 border-solid border-2 border-light-grey rounded-lg text-base'
@@ -148,6 +148,6 @@ export const CardDetails = ({ children }) => {
           value={submit ? "Continue" : "Confirm"}
         />
       </form>
-    </>
+    </div>
   )
 }
