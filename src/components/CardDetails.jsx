@@ -71,83 +71,87 @@ export const CardDetails = ({ children }) => {
           />
         </div>
       </div>
-
-      <form
-        className='flex flex-col m-8 mt-16 gap-5 lg:justify-center lg:flex-grow lg:m-48'
-        onSubmit={handleClick}
-      >
-        {submit ? (
-          <Thanks />
-        ) : (
-          <>
-            <label className='flex flex-col gap-2 uppercase text-base'>
-              cardholder name
-              <input
-                className='p-3 border-solid border-2 border-light-grey rounded-lg text-base'
-                type='text'
-                placeholder='e.g. Jane Appleseed'
-                onChange={(e) => setHolder(format(e.target.value, 25, "holder"))}
-                value={holder}
-                ref={inputRef}
-                name='holder'
-              />
-            </label>
-
-            <label className='flex flex-col gap-2 uppercase text-base'>
-              card number
-              <input
-                className='p-3 border-solid border-2 border-light-grey rounded-lg text-base'
-                type='text'
-                placeholder='e.g. 1234 5678 9123 0000'
-                onChange={(e) => setNumber(format(e.target.value, 19, "number"))}
-                value={number}
-                name='number'
-              />
-            </label>
-
-            <div className='flex gap-4'>
-              <label className='flex flex-col gap-2 uppercase text-base'>
-                exp.date (mm/yy)
-                <div className='flex gap-2'>
-                  <input
-                    className='w-1/2 p-3 border-solid border-2 border-light-grey rounded-lg text-base'
-                    type='text'
-                    placeholder='MM'
-                    onChange={(e) => setMonth(format(e.target.value, 2, "month"))}
-                    value={month}
-                    name='month'
-                  />
-                  <input
-                    className='w-1/2 p-3 border-solid border-2 border-light-grey rounded-lg text-base'
-                    type='text'
-                    placeholder='YY'
-                    onChange={(e) => setYear(format(e.target.value, 2, "year"))}
-                    value={year}
-                    name='year'
-                  />
-                </div>
-              </label>
-
-              <label className='flex flex-col gap-2 uppercase text-base w-1/2'>
-                cvc
+      <div className='flex justify-center items-center lg:flex-grow'>
+        <form
+          className='flex flex-col m-8 mt-16 gap-5 lg:justify-center lg:m-48'
+          onSubmit={handleClick}
+        >
+          {submit ? (
+            <Thanks />
+          ) : (
+            <>
+              <label className='flex flex-col gap-2 uppercase text-sm'>
+                cardholder name
                 <input
-                  className='p-3 border-solid border-2 border-light-grey rounded-lg text-base'
-                  type='number'
-                  placeholder='e.g. 123'
-                  onChange={(e) => setCode(format(e.target.value, 3, "code"))}
-                  value={code}
-                  name='code'
+                  className='p-3 border-solid border-2 border-light-grey rounded-lg text-base max-w-sm'
+                  type='text'
+                  placeholder='e.g. Jane Appleseed'
+                  onChange={(e) => setHolder(format(e.target.value, 25, "holder"))}
+                  value={holder}
+                  ref={inputRef}
+                  name='holder'
                 />
               </label>
-            </div>
-          </>
-        )}
-        <input
-          className='p-4 bg-dark-violet text-white rounded-lg'
-          type='submit'
-          value={submit ? "Continue" : "Confirm"}
-        />
-      </form>
+
+              <label className='flex flex-col gap-2 uppercase text-sm'>
+                card number
+                <input
+                  className='p-3 border-solid border-2 border-light-grey rounded-lg text-base max-w-sm'
+                  type='text'
+                  placeholder='e.g. 1234 5678 9123 0000'
+                  onChange={(e) => setNumber(format(e.target.value, 19, "number"))}
+                  value={number}
+                  name='number'
+                />
+              </label>
+
+              <div className='flex max-w-sm gap-4'>
+                <div className='flex'>
+                  <label className='flex flex-col gap-2 uppercase text-sm'>
+                    exp.date (mm/yy)
+                    <div className='flex gap-2'>
+                      <input
+                        className='w-1/2 flex-1 p-3 border-solid border-2 border-light-grey rounded-lg text-base max-w-sm'
+                        type='text'
+                        placeholder='MM'
+                        onChange={(e) => setMonth(format(e.target.value, 2, "month"))}
+                        value={month}
+                        name='month'
+                      />
+                      <input
+                        className='w-1/2 p-3 border-solid border-2 border-light-grey rounded-lg text-base max-w-sm'
+                        type='text'
+                        placeholder='YY'
+                        onChange={(e) => setYear(format(e.target.value, 2, "year"))}
+                        value={year}
+                        name='year'
+                      />
+                    </div>
+                  </label>
+                </div>
+                <div className='flex'>
+                  <label className='flex flex-col gap-2 uppercase text-sm lg:w-full'>
+                    cvc
+                    <input
+                      className='w-full p-3 border-solid border-2 border-light-grey rounded-lg text-base'
+                      type='text'
+                      placeholder='e.g. 123'
+                      onChange={(e) => setCode(format(e.target.value, 3, "code"))}
+                      value={code}
+                      name='code'
+                    />
+                  </label>
+                </div>
+              </div>
+            </>
+          )}
+          <input
+            className='p-4 bg-dark-violet text-white rounded-lg max-w-sm'
+            type='submit'
+            value={submit ? "Continue" : "Confirm"}
+          />
+        </form>
+      </div>
     </div>
   )
 }
