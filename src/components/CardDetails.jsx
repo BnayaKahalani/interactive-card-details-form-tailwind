@@ -58,10 +58,10 @@ export const CardDetails = ({ children }) => {
           <img
             src={bgMobile}
             alt='Background'
-            className='w-full sm:h-80 lg:h-screen  xl:h-screen'
+            className='w-full h-64 lg:h-screen  xl:h-screen'
           />
         </picture>
-        <div className='cards w-full absolute p-8'>
+        <div className='cards w-full absolute p-8 lg:mt-16 lg:ml-28'>
           <CardBack code={code} />
           <CardFront
             holder={holder}
@@ -146,7 +146,7 @@ export const CardDetails = ({ children }) => {
             </>
           )}
           <input
-            className='p-4 bg-dark-violet text-white rounded-lg max-w-sm'
+            className='p-4 bg-dark-violet text-white rounded-lg max-w-sm hover:cursor-pointer'
             type='submit'
             value={submit ? "Continue" : "Confirm"}
           />
