@@ -2,7 +2,7 @@
 
 The challenge was to build out a responsive interactive credit-card form and get it looking as close to the provided design as possible.
 
-[Click here to see the result.](https://bnayakahalani.github.io/interactive-card-details-form-tailwind//)
+[Click here to see the result.](https://bnayakahalani.github.io/interactive-card-details-form-tailwind//){:target="\_blank"}
 
 Tools I used: React, Tailwind and Vite.
 
@@ -13,8 +13,8 @@ Here are some photos of the final product:
 <br>
 
 <p align="center">
-   <img src="./src/assets/images/screenshots/1.png" width="250px" height="450px" title="Article" /> 
-   <img src="./src/assets/images/screenshots/2.png" width="250px" height="450px" title="Hamburger menu opened"/>
+   <img src="./src/assets/images/screenshots/1.png" width="225px" height="450px" title="Article" /> 
+   <img src="./src/assets/images/screenshots/2.png" width="225px" height="450px" title="Hamburger menu opened"/>
 </p>
    <br/>
 
