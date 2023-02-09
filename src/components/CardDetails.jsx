@@ -36,15 +36,14 @@ export const CardDetails = ({ children }) => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    // if (!submit) {
-    //   if (holder.length > 2 && number.length === 19 && month.length === 2 && year.length === 2 && code.length === 3) {
-    //     setSubmit(!submit)
-    //     console.log("submit:", submit)
-    //   }
-    // } else {
-    //   setSubmit(!submit)
-    // }
-    setSubmit(!submit)
+    if (!submit) {
+      if (holder.length > 2 && number.length === 19 && month.length === 2 && year.length === 2 && code.length === 3) {
+        setSubmit(!submit)
+        console.log("submit:", submit)
+      }
+    } else {
+      setSubmit(!submit)
+    }
   }
 
   return (
@@ -146,7 +145,7 @@ export const CardDetails = ({ children }) => {
             </>
           )}
           <input
-            className='p-4 bg-dark-violet text-white rounded-lg max-w-sm hover:cursor-pointer'
+            className='p-4 bg-dark-violet text-white rounded-lg lg:text-lg max-w-sm hover:cursor-pointer'
             type='submit'
             value={submit ? "Continue" : "Confirm"}
           />

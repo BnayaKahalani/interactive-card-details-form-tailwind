@@ -2,7 +2,7 @@ import complete from "../assets/images/icon-complete.svg"
 
 const Thanks = () => {
   return (
-    <div className='flex flex-col justify-between items-center gap-6'>
+    <div className='flex flex-col justify-between items-center pt-4 gap-6'>
       <img
         src={complete}
         alt='complete'
